@@ -16,7 +16,7 @@ os.mkdir('../tmp/images')
 
 # CREATE RANDOMLY CROPPED IMAGES
 for i in range(500000):
-    img = Image.open(PATH + IMAGES[i%len(IMAGES)])
+    img = Image.open(os.path.join(PATH, IMAGES[i%len(IMAGES)]))
     img = img.resize(( 100,int(img.size[1]/(img.size[0]/100) )), Image.ANTIALIAS)
     w = img.size[0]; h = img.size[1]; a=0; b=0
     if w>64: a = np.random.randint(0,w-64)
@@ -25,3 +25,4 @@ for i in range(500000):
     img.save('../tmp/images/'+str(i)+'.png','PNG')
     if i%100000==0: print('created',i,'cropped images')
 print('created 500000 cropped images')
+
