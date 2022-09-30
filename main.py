@@ -11,8 +11,8 @@ IMAGES = os.listdir(PATH)
 print('There are',len(IMAGES),'images. Here are 5 example filesnames:')
 print(IMAGES[:5])
 
-os.mkdir('../tmp')
-os.mkdir('../tmp/images')
+#os.mkdir('../tmp')
+#os.mkdir('../tmp/images')
 
 # CREATE RANDOMLY CROPPED IMAGES
 for i in range(500000):
